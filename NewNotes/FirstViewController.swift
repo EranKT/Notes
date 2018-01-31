@@ -11,6 +11,10 @@
 import UIKit
 import GoogleMobileAds
 
+let APP_ADS_ID = "ca-app-pub-4450381878329799~7501933738"
+let APP_ADS_UNIT_ID = "ca-app-pub-4450381878329799/5931144848"
+
+
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, GADBannerViewDelegate {
       
     var _list1 = [String]()
@@ -307,7 +311,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //ADS CODE
     lazy var adBannerView: GADBannerView = {
         let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        adBannerView.adUnitID = "ca-app-pub-4450381878329799/3303179267"
+        adBannerView.adUnitID = APP_ADS_UNIT_ID//"ca-app-pub-4450381878329799/3303179267"
         adBannerView.delegate = self
         adBannerView.rootViewController = self
  

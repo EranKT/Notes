@@ -316,7 +316,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //ADS CODE
     lazy var adBannerView: GADBannerView = {
         let adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        adBannerView.adUnitID = "ca-app-pub-4450381878329799/3303179267"
+        adBannerView.adUnitID = APP_ADS_UNIT_ID//"ca-app-pub-4450381878329799/3303179267"
         adBannerView.delegate = self
         adBannerView.rootViewController = self
         

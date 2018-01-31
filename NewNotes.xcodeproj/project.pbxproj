@@ -14,10 +14,10 @@
 		AB811FA21FAB045E0075AAF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB811FA11FAB045E0075AAF9 /* Assets.xcassets */; };
 		AB811FA51FAB045E0075AAF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB811FA31FAB045E0075AAF9 /* LaunchScreen.storyboard */; };
 		ABCD8C0C20175DFA00E4097E /* SecondTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCD8C0B20175DFA00E4097E /* SecondTableCell.swift */; };
-		ABD6D9B31FACA6F500F9A25F /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD6D9B21FACA6F500F9A25F /* GoogleMobileAds.framework */; };
 		ABFFBD4E2021F0B500C5229A /* KTFGeneralAsistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFBD472021F0B500C5229A /* KTFGeneralAsistant.swift */; };
 		ABFFBD512021F0B500C5229A /* KTFSoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFBD4A2021F0B500C5229A /* KTFSoundEngine.swift */; };
 		ABFFBD522021F0B500C5229A /* KTFSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFBD4B2021F0B500C5229A /* KTFSprite.swift */; };
+		ABFFBD5820222E8900C5229A /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFFBD5720222E8900C5229A /* GoogleMobileAds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +30,11 @@
 		AB811FA41FAB045E0075AAF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB811FA61FAB045E0075AAF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABCD8C0B20175DFA00E4097E /* SecondTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableCell.swift; sourceTree = "<group>"; };
-		ABD6D9B21FACA6F500F9A25F /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "NewNotes/SDK/GoogleMobileAdsSdkiOS-7.25.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		ABD6D9B51FB5A0F000F9A25F /* NewNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewNotes.entitlements; sourceTree = "<group>"; };
 		ABFFBD472021F0B500C5229A /* KTFGeneralAsistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTFGeneralAsistant.swift; sourceTree = "<group>"; };
 		ABFFBD4A2021F0B500C5229A /* KTFSoundEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTFSoundEngine.swift; sourceTree = "<group>"; };
 		ABFFBD4B2021F0B500C5229A /* KTFSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTFSprite.swift; sourceTree = "<group>"; };
+		ABFFBD5720222E8900C5229A /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "NewNotes/SDK/GoogleMobileAdsSdkiOS-7.27.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABD6D9B31FACA6F500F9A25F /* GoogleMobileAds.framework in Frameworks */,
+				ABFFBD5820222E8900C5229A /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		ABD6D9B11FACA6F400F9A25F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ABD6D9B21FACA6F500F9A25F /* GoogleMobileAds.framework */,
+				ABFFBD5720222E8900C5229A /* GoogleMobileAds.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -330,8 +330,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US6ZQBEH75;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/NewNotes/SDK/GoogleMobileAdsSdkiOS-7.27.0",
 					"$(inherited)",
-					"$(PROJECT_DIR)/NewNotes/SDK/GoogleMobileAdsSdkiOS-7.25.0",
 				);
 				INFOPLIST_FILE = NewNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -350,8 +350,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = US6ZQBEH75;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/NewNotes/SDK/GoogleMobileAdsSdkiOS-7.27.0",
 					"$(inherited)",
-					"$(PROJECT_DIR)/NewNotes/SDK/GoogleMobileAdsSdkiOS-7.25.0",
 				);
 				INFOPLIST_FILE = NewNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
