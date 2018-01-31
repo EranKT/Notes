@@ -15,6 +15,9 @@
 		AB811FA51FAB045E0075AAF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB811FA31FAB045E0075AAF9 /* LaunchScreen.storyboard */; };
 		ABCD8C0C20175DFA00E4097E /* SecondTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCD8C0B20175DFA00E4097E /* SecondTableCell.swift */; };
 		ABD6D9B31FACA6F500F9A25F /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD6D9B21FACA6F500F9A25F /* GoogleMobileAds.framework */; };
+		ABFFBD4E2021F0B500C5229A /* KTFGeneralAsistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFBD472021F0B500C5229A /* KTFGeneralAsistant.swift */; };
+		ABFFBD512021F0B500C5229A /* KTFSoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFBD4A2021F0B500C5229A /* KTFSoundEngine.swift */; };
+		ABFFBD522021F0B500C5229A /* KTFSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFBD4B2021F0B500C5229A /* KTFSprite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		ABCD8C0B20175DFA00E4097E /* SecondTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableCell.swift; sourceTree = "<group>"; };
 		ABD6D9B21FACA6F500F9A25F /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "NewNotes/SDK/GoogleMobileAdsSdkiOS-7.25.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		ABD6D9B51FB5A0F000F9A25F /* NewNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewNotes.entitlements; sourceTree = "<group>"; };
+		ABFFBD472021F0B500C5229A /* KTFGeneralAsistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTFGeneralAsistant.swift; sourceTree = "<group>"; };
+		ABFFBD4A2021F0B500C5229A /* KTFSoundEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTFSoundEngine.swift; sourceTree = "<group>"; };
+		ABFFBD4B2021F0B500C5229A /* KTFSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTFSprite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,7 @@
 		AB811F8C1FAB045D0075AAF9 = {
 			isa = PBXGroup;
 			children = (
+				ABFFBD452021F0B500C5229A /* KTFClasses */,
 				AB811F971FAB045D0075AAF9 /* NewNotes */,
 				AB811F961FAB045D0075AAF9 /* Products */,
 				ABD6D9B11FACA6F400F9A25F /* Frameworks */,
@@ -82,6 +89,16 @@
 				ABD6D9B21FACA6F500F9A25F /* GoogleMobileAds.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABFFBD452021F0B500C5229A /* KTFClasses */ = {
+			isa = PBXGroup;
+			children = (
+				ABFFBD472021F0B500C5229A /* KTFGeneralAsistant.swift */,
+				ABFFBD4A2021F0B500C5229A /* KTFSoundEngine.swift */,
+				ABFFBD4B2021F0B500C5229A /* KTFSprite.swift */,
+			);
+			path = KTFClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +185,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABCD8C0C20175DFA00E4097E /* SecondTableCell.swift in Sources */,
+				ABFFBD512021F0B500C5229A /* KTFSoundEngine.swift in Sources */,
 				AB811F9D1FAB045D0075AAF9 /* SecondViewController.swift in Sources */,
+				ABFFBD4E2021F0B500C5229A /* KTFGeneralAsistant.swift in Sources */,
+				ABFFBD522021F0B500C5229A /* KTFSprite.swift in Sources */,
 				AB811F991FAB045D0075AAF9 /* AppDelegate.swift in Sources */,
 				AB811F9B1FAB045D0075AAF9 /* FirstViewController.swift in Sources */,
 			);

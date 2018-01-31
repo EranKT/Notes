@@ -17,7 +17,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var _arrayOfpricesLists = [Array<Any>]()
 
     var _currentViewList = [String]()
-    var _pricesArray = [CGFloat]()
+    var _pricesArray = [Double]()
     var _indexForCurrentListInMainList = Int()
     
     @IBOutlet weak var _secondTableView: UITableView!
@@ -59,7 +59,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             _arrayOfSubLists = (UserDefaults.standard.value(forKey: _listIdentity) as! [Array])
             _arrayOfpricesLists = (UserDefaults.standard.value(forKey: _pricesListIdentity) as! [Array])
             _currentViewList = _arrayOfSubLists[_indexForCurrentListInMainList] as! [String]
-            _pricesArray = _arrayOfpricesLists[_indexForCurrentListInMainList] as! [CGFloat]
+            _pricesArray = _arrayOfpricesLists[_indexForCurrentListInMainList] as! [Double]
       
             // add place holders for prices incase of app update
             for _ in 0 ..< _currentViewList.count
@@ -73,6 +73,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         self.saveData()
+        self.didRotate(from: UIInterfaceOrientation.portrait)
     }
     
 /////////// TABLE VIEW
@@ -94,7 +95,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.textLabel?.text = _currentViewList[indexPath.row]
         if _pricesArray[indexPath.row] != 0
         {
-            cell.priceLabel.text = "\(_pricesArray[indexPath.row])"
+            let x = _pricesArray[indexPath.row]
+            let y = Double(round(100*x)/100)
+           // cell.priceLabel.text = String(describing: _pricesArray[indexPath.row])
+        cell.priceLabel.text = "\(y)"
         }
         else
         {
@@ -135,12 +139,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let alert = UIAlertController(title: "", message: "Set price", preferredStyle: .alert)
             
             alert.addTextField(configurationHandler: { (textField) in
-             textField.keyboardType = UIKeyboardType.numberPad
+             textField.keyboardType = UIKeyboardType.decimalPad
             })
             alert.addAction(UIAlertAction(title: "Update", style: .default, handler: { (updateAction) in
-                let floatPrice = CGFloat((alert.textFields!.first!.text! as NSString).floatValue)
-
-                self._pricesArray[indexPath.row] = floatPrice
+                let floatPrice = Double((alert.textFields!.first!.text! as NSString).floatValue)
+                let y = Double(round(100*floatPrice)/100)
+                print(y)
+                self._pricesArray[indexPath.row] = y
                 self._secondTableView.reloadRows(at: [indexPath], with: .fade)
             
             self.saveData()
@@ -182,7 +187,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         item = _currentViewList[sourceIndexPath.row]
         self._currentViewList.remove(at: sourceIndexPath.row)
         self._currentViewList.insert(item, at: destinationIndexPath.row)
-        var price :CGFloat!
+        var price :Double!
         price = _pricesArray[sourceIndexPath.row]
         self._pricesArray.remove(at: sourceIndexPath.row)
         self._pricesArray.insert(price, at: destinationIndexPath.row)

@@ -50,11 +50,37 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if UserDefaults.standard.value(forKey: identity) != nil
         {
             _list1 = (UserDefaults.standard.value(forKey: identity) as! [String])
-            _list2 = (UserDefaults.standard.value(forKey: identity2) as! [Array])
-            _pricesArrays = (UserDefaults.standard.value(forKey: identity3) as! [Array])
+            if UserDefaults.standard.value(forKey: identity2) != nil
+            {
+         _list2 = (UserDefaults.standard.value(forKey: identity2) as! [Array])
+            }
+            else
+            {
+                // create the array to avoid crash on update
+                for _ in _list1
+                {
+                    _list2.append([])
+                }
+            }
+            if UserDefaults.standard.value(forKey: identity3) != nil
+            {
+                _pricesArrays = (UserDefaults.standard.value(forKey: identity3) as! [Array])
+            }
+            else
+            {
+                // create the array to avoid crash on update
+                for _ in _list2
+                {
+                    // need to add array for each list2 item
+                    let newPriceArray = [CGFloat]()
+                    _pricesArrays.append(newPriceArray)
+                }
+            }
+            self.saveData()
             _myTableView.reloadData()
         }
-    }
+        self.didRotate(from: UIInterfaceOrientation.portrait)
+}
 
  ////////////////////////////////////// TABLE VIEW //////////////////////////////
     //COUNT NUMBER OF ROWS IN TABLE
@@ -69,7 +95,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
          let cell = _myTableView.dequeueReusableCell(withIdentifier: "_myCell", for: indexPath) as! SecondTableCell
         cell.backgroundColor = UIColor.init(red: 0, green: 0.8, blue: 0.1, alpha: 0.3)
-        
+     
         cell.textLabel?.text = _list1[indexPath.row]
         let priceListForCell = _pricesArrays[indexPath.row] as! [CGFloat]
         let totalPrice = priceListForCell.reduce(0, +)
@@ -252,7 +278,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             // create new eampty sub array for field
             let newListArray = [String]()
-            let newPriceArray = [Int]()
+            let newPriceArray = [CGFloat]()
             _list2.append(newListArray)
             _pricesArrays.append(newPriceArray)
             
